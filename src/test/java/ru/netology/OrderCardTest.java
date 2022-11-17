@@ -29,11 +29,6 @@ public class OrderCardTest {
         driver = new ChromeDriver(options);
     }
 
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-        driver = null;
-    }
 
     @Test
     void shouldSubmitAnApplication() {
@@ -46,4 +41,11 @@ public class OrderCardTest {
         String actualMessage = driver.findElement(By.className("paragraph")).getText();
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+        driver = null;
+    }
+
 }

@@ -38,7 +38,7 @@ public class OrderCardTest {
         driver.findElement(By.className("checkbox")).click();
         driver.findElement(By.tagName("button")).click();
         String expectedMessage = "  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actualMessage = driver.findElement(By.className("paragraph")).getText();
+        String actualMessage = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals(expectedMessage, actualMessage);
     }
 
